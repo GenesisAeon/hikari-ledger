@@ -1,37 +1,27 @@
-# Diamond Setup
+# hikari-ledger
 
-**Universal Python project scaffold** — generate professional, CI-ready project skeletons in seconds.
+**Proof-of-Resonance distributed consensus** for genesis-os node networks.
 
-No cookiecutter, no Jinja2, no magic. Just a clean CLI, sensible templates, and a validator that keeps your projects healthy.
+CREP-weighted block validation: nodes whose CREP state harmonizes more
+strongly with the network earn proportionally more validation weight, with
+blocks accepted once weighted agreement crosses the 2/3 Byzantine fault
+tolerance threshold.
 
 ## Quickstart
 
 ```bash
-pip install diamond-setup
-# or with uv:
-uv tool install diamond-setup
+pip install hikari-ledger
 ```
 
 ```bash
-diamond scaffold my-new-tool
-cd my-new-tool && uv sync --dev && uv run pytest
+hikari-ledger run --nodes 50 --blocks 100
 ```
-
-## Why Diamond Setup?
-
-| Feature | diamond-setup | cookiecutter | copier |
-|---------|:---:|:---:|:---:|
-| Zero config needed | ✅ | ❌ | ❌ |
-| Built-in validator | ✅ | ❌ | ❌ |
-| Pure Python templates | ✅ | ❌ | ❌ |
-| `--dry-run` support | ✅ | ❌ | ✅ |
-| Extensible presets | ✅ | ✅ | ✅ |
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `diamond scaffold <name>` | Create a new project |
-| `diamond list-templates` | Show available templates |
-| `diamond validate [path]` | Check a project's health |
-| `diamond version` | Show version |
+| `hikari-ledger run` | Run a Proof-of-Resonance consensus simulation |
+| `hikari-ledger simulate-attack` | Simulate consensus under a Byzantine fraction |
+| `hikari-ledger energy-comparison` | Compare PoR energy/latency vs. PoW/PoS/BFT |
+| `hikari-ledger version` | Show version |

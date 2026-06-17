@@ -1,8 +1,8 @@
-site_name: Diamond Setup
-site_description: Universal Python project scaffold — generate professional project skeletons in seconds
+site_name: hikari-ledger
+site_description: Proof-of-Resonance distributed consensus for genesis-os node networks
 site_author: GenesisAeon
-repo_url: https://github.com/GenesisAeon/diamond-setup
-repo_name: GenesisAeon/diamond-setup
+repo_url: https://github.com/GenesisAeon/hikari-ledger
+repo_name: GenesisAeon/hikari-ledger
 
 theme:
   name: material
@@ -39,5 +39,3 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - CLI Reference: cli.md
-  - Templates: templates.md
