@@ -3,14 +3,14 @@
 ## Installation
 
 ```bash
-pip install <package-name>
+pip install hikari-ledger
 ```
 
 ## Development Setup
 
 ```bash
-git clone https://github.com/GenesisAeon/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/GenesisAeon/hikari-ledger.git
+cd hikari-ledger
 pip install -e ".[dev]"
 ```
 

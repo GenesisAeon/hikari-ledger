@@ -1,0 +1,33 @@
+{
+  "title": "hikari-ledger — P29: Proof-of-Resonance distributed consensus for genesis-os node networks",
+  "description": "<p>Proof-of-Resonance distributed consensus for genesis-os node networks.</p><p>Part of the <strong>GenesisAeon</strong> ecosystem (P29, domain: distributed-systems). Within the GenesisAeon CREP Criticality Spectrum, this package's characteristic coupling value is Γ ≈ 0.367.</p><p>See <a href=\"https://github.com/GenesisAeon/hikari-ledger\">github.com/GenesisAeon/hikari-ledger</a> for source, documentation, and reproducibility notebooks.</p>",
+  "creators": [
+    {
+      "name": "Römer, Johann",
+      "affiliation": "Independent Researcher / MOR Research Collective"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "GenesisAeon",
+    "P29",
+    "distributed-systems",
+    "UTAC",
+    "CREP",
+    "open science"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.19645351",
+      "relation": "isPartOf",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "version": "1.0.0",
+  "communities": [
+    { "identifier": "genesisaeon" }
+  ]
+}

@@ -1,27 +1,26 @@
 [project]
-name = "diamond-setup"
+name = "hikari-ledger"
 version = "1.0.0"
-description = "Universal Python project scaffold â€” generate professional project skeletons in seconds"
+description = "Proof-of-Resonance distributed consensus — CREP-weighted validation for genesis-os node networks"
 readme = "README.md"
 license = { text = "MIT" }
-authors = [{ name = "GenesisAeon" }]
+authors = [{ name = "Johann Römer" }]
 requires-python = ">=3.11"
-keywords = ["scaffold", "template", "cli", "project-generator", "skeleton"]
+keywords = ["genesisaeon", "consensus", "blockchain", "crep", "utac", "distributed-systems"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Topic :: Software Development :: Code Generators",
+    "Topic :: Scientific/Engineering",
+    "Topic :: System :: Distributed Computing",
 ]
 dependencies = [
     "typer>=0.12.0",
-    "rich>=13.7.0",
-    "pyyaml>=6.0",
-    "pydantic>=2.7",
 ]
 
 [project.optional-dependencies]
@@ -38,13 +37,13 @@ dev = [
 ]
 
 [project.scripts]
-diamond = "diamond_setup.cli:app"
+hikari-ledger = "hikari_ledger.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/GenesisAeon/diamond-setup"
-Repository = "https://github.com/GenesisAeon/diamond-setup"
-Documentation = "https://genesisaeon.github.io/diamond-setup"
-Issues = "https://github.com/GenesisAeon/diamond-setup/issues"
+Homepage = "https://github.com/GenesisAeon/hikari-ledger"
+Repository = "https://github.com/GenesisAeon/hikari-ledger"
+Documentation = "https://genesisaeon.github.io/hikari-ledger"
+Issues = "https://github.com/GenesisAeon/hikari-ledger/issues"
 Zenodo = "https://doi.org/10.5281/zenodo.XXXXXXX"
 
 [build-system]
@@ -52,7 +51,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/diamond_setup"]
+packages = ["src/hikari_ledger"]
 
 [tool.ruff]
 line-length = 100
@@ -67,7 +66,7 @@ ignore = ["B008"]  # typer uses function calls in defaults
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--cov=diamond_setup --cov-report=term-missing -v"
+addopts = "--cov=hikari_ledger --cov-report=term-missing -v"
 
 [tool.coverage.run]
 source = ["src"]
@@ -79,4 +78,3 @@ strict = true
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
-

@@ -1,85 +1,77 @@
-# diamond-setup
+# hikari-ledger
 
-**Universal Python project scaffold** — generate professional, CI-ready skeletons in seconds.
+**Proof-of-Resonance distributed consensus** for genesis-os node networks — a
+CREP-weighted alternative to Proof-of-Work and Proof-of-Stake.
 
-[![CI](https://github.com/GenesisAeon/diamond-setup/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/diamond-setup/actions/workflows/ci.yml)
+[![CI](https://github.com/GenesisAeon/hikari-ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/GenesisAeon/hikari-ledger/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-No cookiecutter, no Jinja2, no magic. Just a clean CLI that produces a fully working project — `uv sync`, `pytest`, ruff, pre-commit and CI all wired up from second one.
+Instead of energy-intensive hash computation (PoW) or capital-based staking
+(PoS), Proof-of-Resonance (PoR) validates blocks based on each node's CREP
+harmonic state — the same Coherence/Resonance/Emergence/Poetics tensor used
+throughout the GenesisAeon ecosystem. Nodes whose CREP state is in higher
+harmony with the network (higher Γ) earn proportionally more validation
+weight; a block is accepted once weighted agreement crosses the classic
+Byzantine fault tolerance threshold of 2/3.
 
----
-
-## Install
+## Installation
 
 ```bash
-pip install diamond-setup
-# or
-uv tool install diamond-setup
+pip install hikari-ledger
 ```
 
 ## Usage
 
-```bash
-# New project with the minimal template (default)
-diamond scaffold my-lib
+```python
+from hikari_ledger import HikariLedger
 
-# GenesisAeon preset (adds domains.yaml + entropy-table bridge)
-diamond scaffold my-physics-tool --template genesis --author "Ada Lovelace"
+ledger = HikariLedger(seed=42)
+result = ledger.run_cycle(n_nodes=50, n_blocks=100)
+print(result["acceptance_rate"])
 
-# Preview what would be generated (no files written)
-diamond scaffold my-lib --dry-run
-
-# See all templates
-diamond list-templates
-
-# Validate any project directory
-diamond validate path/to/my-project
-diamond validate          # validates the current directory
+print(ledger.get_crep_state())   # {"C": ..., "R": ..., "E": ..., "P": ..., "Gamma": ...}
+print(ledger.get_utac_state())   # {"H": ..., "H_star": 0.667, "K": 1.0, ...}
+print(ledger.get_phase_events())  # consensus failures / forks
+print(ledger.to_zenodo_record())
 ```
 
-## What you get
-
-Running `diamond scaffold my-lib` produces:
-
-```
-my-lib/
-├── src/
-│   └── my_lib/
-│       └── __init__.py       # __version__ = "0.1.0"
-├── tests/
-│   ├── __init__.py
-│   └── test_main.py
-├── .github/
-│   └── workflows/
-│       └── ci.yml            # matrix: 3.11 + 3.12
-├── pyproject.toml            # hatchling, ruff, pytest configured
-├── README.md
-├── AGENT.md                  # GenesisAeon release & metadata rules
-├── .gitignore
-└── .pre-commit-config.yaml   # ruff + standard hooks
-```
-
-Then just:
+Or via the CLI:
 
 ```bash
-cd my-lib
-uv sync --dev
-pre-commit install
-uv run pytest
+hikari-ledger run --nodes 50 --blocks 100
+hikari-ledger simulate-attack --byzantine-fraction 0.30
+hikari-ledger energy-comparison --vs-pow --vs-pos
 ```
 
-## Templates
+## Physical mapping (UTAC)
 
-| Template | Description |
-|----------|-------------|
-| `minimal` | Clean Python package for everyone |
-| `genesis` | Adds `domains.yaml` + entropy-table bridge (GenesisAeon preset) |
+| UTAC symbol | Meaning in PoR |
+|---|---|
+| `H(t)` | network consensus strength (fraction of weighted agreement) |
+| `K` | 1.0 (perfect consensus) |
+| `H*` | 2/3 (Byzantine fault tolerance threshold) |
+| `Γ` | per-node CREP coupling, derived from coherence/resonance/emergence/poetics |
 
-## Extending
+`Γ_PoR = arctanh(2/3) / σ ≈ 0.367` — close to the Manna sandpile criticality
+value (0.376), suggesting PoR consensus naturally operates near dense
+self-organized criticality.
 
-Adding a new template is one Python file. See [docs/templates.md](docs/templates.md).
+## Role in the GenesisAeon Ecosystem
+
+`hikari-ledger` is **P29** in the GenesisAeon CREP Criticality Spectrum,
+representing the **distributed-systems** domain. It implements the
+Proof-of-Resonance consensus layer used to coordinate `genesis-os` node
+networks, weighting validation rights by each node's measured CREP state
+rather than computational work or staked capital.
+
+## Citation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PLACEHOLDER.svg)](https://doi.org/10.5281/zenodo.PLACEHOLDER)
+
+DOI will be assigned automatically on first GitHub Release once
+Zenodo–GitHub integration is enabled for this repo.
 
 ---
 
-Built with [uv](https://docs.astral.sh/uv/) · [Typer](https://typer.tiangolo.com/) · [Rich](https://rich.readthedocs.io/)
+Built with [uv](https://docs.astral.sh/uv/) · [Typer](https://typer.tiangolo.com/)
