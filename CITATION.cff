@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "hikari-ledger"
+version: "1.0.0"
+date-released: "2026-06-17"
+authors:
+  - family-names: Römer
+    given-names: Johann
+repository-code: "https://github.com/GenesisAeon/hikari-ledger"
+license: MIT
+abstract: "Proof-of-Resonance distributed consensus — CREP-weighted validation for genesis-os node networks"
+keywords:
+  - GenesisAeon
+  - UTAC
+  - CREP
+  - open-science
+  - genesisaeon
+  - consensus
+  - blockchain
+  - crep
