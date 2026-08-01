@@ -44,7 +44,7 @@ Homepage = "https://github.com/GenesisAeon/hikari-ledger"
 Repository = "https://github.com/GenesisAeon/hikari-ledger"
 Documentation = "https://genesisaeon.github.io/hikari-ledger"
 Issues = "https://github.com/GenesisAeon/hikari-ledger/issues"
-Zenodo = "https://doi.org/10.5281/zenodo.XXXXXXX"
+Zenodo = "https://doi.org/10.5281/zenodo.20788575"
 
 [build-system]
 requires = ["hatchling"]
