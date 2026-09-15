@@ -23,6 +23,24 @@ CONSENSUS_THRESHOLD = 2.0 / 3.0
 BYZANTINE_TOLERANCE = 1.0 / 3.0
 
 # eta_PoR = H*/K = 2/3 -> Gamma_PoR = arctanh(eta_PoR) / sigma
+#
+# HONESTY NOTE (2026-09-15, ecosystem-wide Gamma-circularity review):
+# CONSENSUS_THRESHOLD=2/3 is a genuine, rigorously derived mathematical
+# fact (Byzantine fault tolerance requires n > 3f, i.e. > 2/3 agreement)
+# -- unlike the empirical thresholds used elsewhere in the GenesisAeon
+# ecosystem, this one is not an estimate. However SIGMA=2.2 is the same
+# shared default reused unchanged across unrelated UTAC packages (Amazon,
+# AMOC, Cygnus X-1 jets, solar flares, neural avalanches, sandpile SOC),
+# never independently derived for distributed-consensus systems. GAMMA_POR
+# is therefore a well-defined rescaling of a real threshold, but -- like
+# the other packages sharing SIGMA=2.2 -- it is NOT independently
+# comparable to other domains' Gamma values; any apparent "closeness" to
+# another package's Gamma (e.g. sandpile-utac's MANNA_GAMMA=0.376) is an
+# artifact of both domains' threshold fractions being similar in magnitude
+# and passing through the same shared constant, not evidence of shared
+# underlying physics. See
+# D:\mandala\crep-utac-afet-formalism\FOLLOWUP_TICKETS.md for the full
+# ecosystem-wide finding.
 GAMMA_POR = math.atanh(CONSENSUS_THRESHOLD) / SIGMA  # ~= 0.367
 
 # Benchmark targets (value, tolerance) used by benchmark.py / tests.

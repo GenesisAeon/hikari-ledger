@@ -53,9 +53,16 @@ hikari-ledger energy-comparison --vs-pow --vs-pos
 | `H*` | 2/3 (Byzantine fault tolerance threshold) |
 | `Γ` | per-node CREP coupling, derived from coherence/resonance/emergence/poetics |
 
-`Γ_PoR = arctanh(2/3) / σ ≈ 0.367` — close to the Manna sandpile criticality
-value (0.376), suggesting PoR consensus naturally operates near dense
-self-organized criticality.
+`Γ_PoR = arctanh(2/3) / σ ≈ 0.367`. CONSENSUS_THRESHOLD=2/3 is a genuine
+mathematical fact (Byzantine fault tolerance), but σ=2.2 is a shared
+default reused unchanged across unrelated GenesisAeon UTAC packages and
+never independently derived for distributed-consensus systems — so
+Γ_PoR is not independently comparable to other domains' Γ values.
+Its apparent closeness to the Manna sandpile SOC value (0.376,
+`sandpile-utac`) is a coincidence of similar threshold magnitudes both
+passing through the same shared σ, not evidence that PoR consensus and
+sandpile dynamics share underlying physics — see `constants.py`'s
+`GAMMA_POR` docstring for the full reasoning.
 
 ## Role in the GenesisAeon Ecosystem
 

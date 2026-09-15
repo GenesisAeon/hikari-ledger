@@ -1,6 +1,6 @@
 [project]
 name = "hikari-ledger"
-version = "1.0.0"
+version = "1.0.1"
 description = "Proof-of-Resonance distributed consensus — CREP-weighted validation for genesis-os node networks"
 readme = "README.md"
 license = { text = "MIT" }
